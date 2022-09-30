@@ -11,21 +11,22 @@ import config from "./../config"
 })*/
 
 //este es el de doble docker
-/*const connection=mysql.createConnection({
-    host:"172.17.0.2",
+const connection=mysql.createConnection({
+    host:process.env.IP_DB,
     database:"TuSIA_historiaAcademica_db",
     user:"sarodriguezca",
     password:"aaaaa55555",
     port:3306
-})*/
+})
 
 //este es todo local
+/*
 const connection=mysql.createConnection({
     host:"localhost",
     database:"TuSIA_historiaAcademica_db",
     user:"root",
     password:"Arisan.0823",
-})
+})*/
 
 const getConnection=()=>{
     return connection
