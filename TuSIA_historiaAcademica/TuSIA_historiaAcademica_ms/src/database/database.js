@@ -12,7 +12,7 @@ import config from "./../config"
 
 //este es el de doble docker
 const connection=mysql.createConnection({
-    host:process.env.IP_DB,
+    host:"172.17.0.2",
     database:"TuSIA_historiaAcademica_db",
     user:"sarodriguezca",
     password:"aaaaa55555",
