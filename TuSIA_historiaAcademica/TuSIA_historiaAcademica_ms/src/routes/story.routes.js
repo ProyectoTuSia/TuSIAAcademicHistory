@@ -6,6 +6,7 @@ import {methods as storyController} from "../controllers/story.controller"
 const router=Router()
 
 router.get("/:id", storyController.getStoryController)
+router.get("/", storyController.getStoryByUserAndCareerController)
 router.post("/", storyController.newStoryController)
 router.put("/:id", storyController.updateStoryStateController)
 

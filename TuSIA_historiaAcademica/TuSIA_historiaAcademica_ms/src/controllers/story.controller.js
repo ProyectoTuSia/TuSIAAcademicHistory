@@ -8,11 +8,36 @@ import {newStudentCreditsTaken} from "../models/newStudentCreditsTaken"
 import {newAverages} from "../models/newAverages"
 import {newCreditSummary} from "../models/newCreditSummary"
 import {updateStoryState} from "../models/updateStoryState"
+import {getStoryByUserAndCareer} from "../models/getStoryByUserAndCareer"
+import {getStorysByUser} from "../models/getStorysByUser"
 
 const getStoryController= async(req,res)=>{
 
     try {
         const result = await getStory(req)
+        res.json(result)
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+
+}
+const getStorysByUserController= async(req,res)=>{
+
+    try {
+        const result = await getStorysByUser(req)
+        res.json(result)
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+
+}
+
+const getStoryByUserAndCareerController= async(req,res)=>{
+
+    try {
+        const result = await getStoryByUserAndCareer(req)
         res.json(result)
     } catch (error) {
         res.status(500)
@@ -56,5 +81,7 @@ const updateStoryStateController=async(req,res)=>{
 export const methods={
     getStoryController,
     newStoryController,
-    updateStoryStateController
+    updateStoryStateController,
+    getStoryByUserAndCareerController,
+    getStorysByUserController
 }

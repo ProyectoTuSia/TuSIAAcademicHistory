@@ -11,6 +11,7 @@ import studentSubjectsRoutes from"./routes/studentSubjects.routes"
 import creditSummaryRoutes from"./routes/creditSummary.routes"
 import averagesRoutes from"./routes/averages.routes"
 import cancelCreditsRoutes from"./routes/cancelCredits.routes"
+import getStoryRoutes from "./routes/getStory.routes"
 
 const app=express()
 
@@ -32,5 +33,6 @@ app.use("/api/studentSubjects", studentSubjectsRoutes)
 app.use("/api/creditSummary", creditSummaryRoutes)
 app.use("/api/averages", averagesRoutes)
 app.use("/api/cancelCredits", cancelCreditsRoutes)
+app.use("/api/stories", getStoryRoutes)
 
 export default app
