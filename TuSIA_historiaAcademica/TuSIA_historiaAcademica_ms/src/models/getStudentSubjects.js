@@ -7,7 +7,7 @@ const getStudentSubjects= async (req) =>{
         
         const {id}=req.params
 
-        result=await connection.query("SELECT * FROM student_subject WHERE id_story= ?", id)
+        result=await connection.query("SELECT * FROM student_subject JOIN subject on subject_code=code WHERE id_story= ?", id)
         
     }
     catch(error){
